@@ -1,0 +1,49 @@
+
+
+.body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+#inbody{
+    padding: 10px;
+    margin-bottom: 10%;
+}
+
+
+.main{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+
+.problem{
+    text-align:center;
+    padding: 5px;
+}
+
+.problemSection{
+    margin-bottom: 10%;
+}
+
+.answer{
+    text-align: center;
+    display: none;
+}
+
+
+div.button
+{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+input{
+    text-align: center;
+}
+    
+
+
