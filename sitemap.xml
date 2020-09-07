@@ -1,20 +1,47 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
-    <url>
-        <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endfor %}
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
-    <url>
-        <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
+
+<url>
+  <loc>https://yjudev.github.io/</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/main_page/index.html</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/reference_room_page/index.html</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/english_quiz_page/index.html</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/index.html</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/reference_room_page/models/%EC%98%81%EC%96%B4%EC%96%B4%ED%9C%981.pdf</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://yjudev.github.io/reference_room_page/models/%EA%B9%80%EA%B7%9C%EB%AF%BC%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.pdf</loc>
+  <lastmod>2020-09-07T09:08:03+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>
