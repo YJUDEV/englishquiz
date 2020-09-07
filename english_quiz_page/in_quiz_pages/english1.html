@@ -15,7 +15,7 @@
         <link href='http://fonts.googleapis.com/earlyaccess/notosanskr.css' rel='stylesheet' type='text/css'> 
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -41,7 +41,7 @@
                 <!-- Portfolio Section Heading-->
                 <br>
                 <br>
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">영단어 테스트</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">영단어 기초1</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -50,13 +50,32 @@
                 </div>
                 
                 <!-- 본문 -->
-                <select class="form-control" name="selectedSubject">
-                    <option selected disabled hidden >주제를 선택하세요</option>
-                    <option value="english1">영단어 기초1</option>
-                </select>
-
-                <div class="button" style="text-align: center; margin-top: 5%;">
-                    <button type="button" class="btn btn-outline-dark button1" onclick="moveToQuizPage(document.querySelector('select').value)">시작하기</button>
+                <div class=problemSection>
+                    <h3 class="problem">apple</h3>
+                    <input type="text" value="뜻을 입력하세요" class="form-control">
+                    <span class="answer">정답 : 사과</span>
+                </div>
+                
+                <div class=problemSection>
+                    <h3 class="problem">banana</h3>
+                    <input type="text" value="뜻을 입력하세요" class="form-control">
+                    <span class="answer">정답 : 바나나</span>
+                </div>
+        
+                <div class=problemSection>
+                    <h3 class="problem">kimgyumin</h3>
+                    <input type="text" value="뜻을 입력하세요" class="form-control">
+                    <span class="answer">정답 : 병신</span>
+                </div>
+        
+                <h2 class="result" style="display: none;text-align: center;"></h2>
+        
+                <div class="button">
+                    <button type="button" class="btn btn-outline-dark buttonDefault" onclick="showResult(document.querySelectorAll('input'))">제출</button>
+                    <span class=otherButtons style="display: none;">
+                        <button type="button" class="btn btn-outline-dark" onclick="moveToQuizPage('english1')">재응시</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="moveToMainPage()">돌아가기</button>
+                    </span>
                 </div>
           
             </div>
@@ -112,9 +131,9 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
+        <script src="../assets/mail/jqBootstrapValidation.js"></script>
+        <script src="../assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>
