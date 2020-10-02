@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>자료실</title>
+        <title>영단어 테스트</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../../files/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -15,7 +15,7 @@
         <link href='http://fonts.googleapis.com/earlyaccess/notosanskr.css' rel='stylesheet' type='text/css'> 
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../../files/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -28,20 +28,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html">메인페이지</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../reference_room_page/index.html">자료실</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../index.html">메인페이지</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../reference_room_page/index.html">자료실</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-         <!-- Portfolio Section-->
-         <section class="page-section portfolio" id="portfolio">
+        <!--본문 섹션-->
+         <section class="page-section" id="contact">
             <div class="container">
-                <!-- Portfolio Section Heading-->
+ 
                 <br>
                 <br>
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">영단어 기초1</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lesson 5 - ICT in our lives</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -50,33 +50,17 @@
                 </div>
                 
                 <!-- 본문 -->
-                <div class=problemSection>
-                    <h3 class="problem">apple</h3>
-                    <input type="text" value="뜻을 입력하세요" class="form-control">
-                    <span class="answer">정답 : 사과</span>
+                <div id="quiz"></div>
+
+                <div style="text-align: center; margin-top: 5% ; margin-bottom: 5%;">
+                    <button id="submit" class="btn btn-xl btn-outline-dark"> 제출 </button>
+                    <a id="retake" style="display: none;" class="btn btn-xl btn-outline-dark" href="./lesson5.html">
+                        재응시
+                    </a>
                 </div>
+
+                <div id="result"> </div>
                 
-                <div class=problemSection>
-                    <h3 class="problem">banana</h3>
-                    <input type="text" value="뜻을 입력하세요" class="form-control">
-                    <span class="answer">정답 : 바나나</span>
-                </div>
-        
-                <div class=problemSection>
-                    <h3 class="problem">kimgyumin</h3>
-                    <input type="text" value="뜻을 입력하세요" class="form-control">
-                    <span class="answer">정답 : 병신</span>
-                </div>
-        
-                <h2 class="result" style="display: none;text-align: center;"></h2>
-        
-                <div class="button">
-                    <button type="button" class="btn btn-outline-dark buttonDefault" onclick="showResult(document.querySelectorAll('input'))">제출</button>
-                    <span class=otherButtons style="display: none;">
-                        <button type="button" class="btn btn-outline-dark" onclick="moveToQuizPage('english1')">재응시</button>
-                        <button type="button" class="btn btn-outline-dark" onclick="moveToMainPage()">돌아가기</button>
-                    </span>
-                </div>
           
             </div>
         </section>
@@ -130,10 +114,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="../assets/mail/jqBootstrapValidation.js"></script>
-        <script src="../assets/mail/contact_me.js"></script>
+
         <!-- Core theme JS-->
         <script src="../js/scripts.js"></script>
+        <script src="../../files/js/scripts.js"></script>
+
+        <script>
+            buildQuiz("lesson5")
+            submitBtn.addEventListener('click',showResult);
+        </script>
     </body>
 </html>

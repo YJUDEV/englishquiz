@@ -1,14 +1,8 @@
 
-
   
 
 function moveToQuizPage(selectedSubject){
-  console.log(selectedSubject)
-
-  if (selectedSubject == 'english1'){
-      console.log(selectedSubject)
-      location.href = 'english1.html'
-  }
+    location.href = './in_quiz_pages/' + selectedSubject + ".html"
 }
 
 function moveToMainPage(){
@@ -16,75 +10,73 @@ function moveToMainPage(){
 }
 
 
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
 
-function showResult(results){
-
-  var correctCount = 0
-  for (var i in results){
-
-      if (i == "length"){
-          break
-      }
-
-      results[i].readOnly = true
-      if (i==0){
-
-          if (results[i].value=="사과"){
-              results[i].style.border = "2px solid #008000"
-              correctCount++
-              console.log("정답")
-          }
-          else{
-              results[i].style.border = "2px solid #ff0000"
-              console.log("오답")
-          }
-      }
-      else if (i==1){
-
-          if (results[i].value=="바나나"){
-              correctCount++
-              results[i].style.border = "2px solid #008000"
-              console.log("정답")
-          }
-          else{
-              results[i].style.border = "2px solid #ff0000"
-              console.log("오답")
-          }
-
-      }
-      else if (i==2){
-
-          if (results[i].value=="병신"){
-              correctCount++
-              results[i].style.border = "2px solid #008000"
-              console.log("정답")
-          }
-          else{
-              results[i].style.border = "2px solid #ff0000"
-              console.log("오답")
-          }
-
-      }
-  }
+        anHttpRequest.open( "GET", aUrl, true );            
+        anHttpRequest.send( null );
+    }
+}
 
 
-  var answers = document.querySelectorAll('.answer')
+const quizData = []
+const quizDisplay = document.getElementById('quiz');
+const resultDisplay = document.getElementById('result');
+const submitBtn = document.getElementById('submit');
+const retakeBtn = document.getElementById("retake")
 
-  for (var i in answers){
+function buildQuiz(selectedSubject){
 
-      if (i == "length"){
-          break
-      }
+    var client = new HttpClient();
+    client.get('http://121.158.166.119:5000/' + selectedSubject, function(response) {
+        response = JSON.parse(response)
+        for (i=0; i<response.length; i++){
+            quizData.push(response[i])
+        }
 
-      answers[i].style.display = "block"
-      
-  }
+        const output = [ ]; 
+        quizData.forEach(  
+            (currentQuestion, questionNum) => { 
+                const answers = [ ];  
+                for(item in currentQuestion.answers){ 
+                    answers.push(`<label style="margin-right:3%;">
+                                <input type="radio"  name="question${questionNum}" value="${item}">
+                                    ${currentQuestion.answers[item]}
+                                </label>`);
+                }
+                output.push(`<div class="question" style="text-align: center;font-weight:bold; font-size: 2rem;"> ${(questionNum+1+'. ') + currentQuestion.question}</div>
+                            <div class="answer" style="text-align: center; font-size: 1.5rem;">${answers.join('')}</div>`);
+            }              
+        );
+    
+        quizDisplay.innerHTML = output.join('</br></br></br>');
+    });
+}
 
-  document.querySelector(".otherButtons").style.display = "block"
-  document.querySelector(".buttonDefault").style.display = "none"
 
-  document.querySelector(".result").style.display = "block"
-  document.querySelector(".result").innerHTML = `정답수 : ${correctCount}/3`;
+function showResult(){
+    const answerDisplays = quizDisplay.querySelectorAll('.answer');  
+      let numCorrect = 0; 
+
+       quizData.forEach( (currentQuestion, questionNum)=>{
+              const answerDisplay = answerDisplays[questionNum]; 
+              const selector = `input[name=question${questionNum}]:checked`;  
+              const userAnswer = (answerDisplay.querySelector(selector) || {}).value;  
 
 
+               if(userAnswer === currentQuestion.correct){    
+                       numCorrect++;
+                       answerDisplays[questionNum].style.color = 'green';
+               }else{
+                       answerDisplays[questionNum].style.color = 'red';
+               }
+       });
+        resultDisplay.innerHTML = `<div style="text-align: center; font-size: 1.5rem;"> 정답수 : ${numCorrect} / ${quizData.length}<div>`; 
+        retakeBtn.style.display="inline";
+        retakeBtn.style.marginLeft="2%"
 }
