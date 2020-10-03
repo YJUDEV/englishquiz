@@ -252,11 +252,6 @@ const lesson5 = [
     },
     
     {
-        "word" : "detect",
-        "mean" : "감지하다"
-    },
-    
-    {
         "word" : "herbicide",
         "mean" : "제초제"
     },
@@ -468,7 +463,7 @@ const lesson5 = [
     
     {
         "word" : "detect",
-        "mean" : "알아내다"
+        "mean" : "알아내다, 감지하다"
     },
     
     {
@@ -504,11 +499,6 @@ const lesson5 = [
     {
         "word" : "address",
         "mean" : "~를 해결하다"
-    },
-    
-    {
-        "word" : "impact",
-        "mean" : "영향, 충격"
     },
     
     {
