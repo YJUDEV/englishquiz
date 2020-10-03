@@ -347,7 +347,7 @@ const lesson5 = [
     },
     
     {
-        "word" : "quanlity",
+        "word" : "quality",
         "mean" : "질"
     },
     
