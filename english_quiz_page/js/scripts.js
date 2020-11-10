@@ -562,7 +562,7 @@ const lesson4 = [
 
     {
         "word" : "grab",
-        "mean" : "헉 하고 숨을 쉬다"
+        "mean" : "붙잡다, 움켜잡다"
     },
 
     {
@@ -1354,7 +1354,7 @@ const english_vocabulary_assessment = [
 
     {
         "word" : "grab",
-        "mean" : "헉 하고 숨을 쉬다"
+        "mean" : "붙잡다, 움켜잡다"
     },
 
     {
