@@ -288,7 +288,7 @@ const lesson2 = [
     },
 
     {
-        "word" : "marbel",
+        "word" : "marvel",
         "mean" : "경탄하다"
     },
 
@@ -397,7 +397,7 @@ const lesson3 = [
     },
 
     {
-        "word" : "finacial",
+        "word" : "financial",
         "mean" : "금융의, 재정의"
     },
 
@@ -448,7 +448,7 @@ const lesson3 = [
 
     {
         "word" : "regarding",
-        "mean" : "~에 관하다"
+        "mean" : "~에 관하여"
     },
 
     {
@@ -730,7 +730,7 @@ const lesson5 = [
     },
 
     {
-        "word" : "it oges without saying that ~",
+        "word" : "it goes without saying that ~",
         "mean" : "~은 말할 것도 없다"
     },
 
@@ -750,7 +750,7 @@ const lesson5 = [
     },
 
     {
-        "word" : "potimize",
+        "word" : "optimize",
         "mean" : "최적화하다"
     },
 
@@ -1084,7 +1084,7 @@ const english_vocabulary_assessment = [
     },
 
     {
-        "word" : "marbel",
+        "word" : "marvel",
         "mean" : "경탄하다"
     },
 
@@ -1191,7 +1191,7 @@ const english_vocabulary_assessment = [
     },
 
     {
-        "word" : "finacial",
+        "word" : "financial",
         "mean" : "금융의, 재정의"
     },
 
@@ -1242,7 +1242,7 @@ const english_vocabulary_assessment = [
 
     {
         "word" : "regarding",
-        "mean" : "~에 관하다"
+        "mean" : "~에 관하여"
     },
 
     {
@@ -1520,7 +1520,7 @@ const english_vocabulary_assessment = [
     },
 
     {
-        "word" : "it oges without saying that ~",
+        "word" : "it goes without saying that ~",
         "mean" : "~은 말할 것도 없다"
     },
 
@@ -1540,7 +1540,7 @@ const english_vocabulary_assessment = [
     },
 
     {
-        "word" : "potimize",
+        "word" : "optimize",
         "mean" : "최적화하다"
     },
 
