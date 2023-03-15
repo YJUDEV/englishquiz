@@ -2,7 +2,11 @@
   
 
 function moveToQuizPage(selectedSubject){
-    location.href = './in_quiz_pages/' + selectedSubject + ".html"
+   
+    if (selectedSubject != '주제를 선택하세요') {
+        location.href = './in_quiz_pages/' + selectedSubject + ".html"
+    }
+    
 }
 
 function moveToMainPage(){
